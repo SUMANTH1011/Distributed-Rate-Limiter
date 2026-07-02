@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis-server
+    restart: unless-stopped
+
+    ports:
+      - "6379:6379"
+
+    command: redis-server --appendonly yes
+
+    volumes:
+      - redis_data:/data
+
+
+  rate-limiter:
+    build: .
+
+    container_name: distributed-rate-limiter
+
+    depends_on:
+      - redis
+
+    ports:
+      - "8080:8080"
+
+    volumes:
+      - ./rules.json:/app/rules.json
+      - ./config:/app/config
+
+    restart: unless-stopped
+
+
+volumes:
+  redis_data:

@@ -1,0 +1,12 @@
+#ifndef ALGORITHM_TYPE_H
+#define ALGORITHM_TYPE_H
+
+enum class AlgorithmType
+{
+    TOKEN_BUCKET,
+    LEAKY_BUCKET,
+    FIXED_WINDOW,
+    SLIDING_WINDOW_LOG,
+    SLIDING_WINDOW_COUNTER
+};
+#endif

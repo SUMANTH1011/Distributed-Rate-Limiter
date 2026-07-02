@@ -1,0 +1,11 @@
+{
+    "name": "distributed-rate-limiter",
+    "version": "1.0.0",
+    "description": "A distributed rate limiter implemented in modern C++ using Crow, Redis and multiple rate limiting algorithms.",
+    "dependencies": [
+        "crow",
+        "redis-plus-plus",
+        "hiredis",
+        "nlohmann-json"
+    ]
+}

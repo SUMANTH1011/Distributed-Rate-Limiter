@@ -1,0 +1,6 @@
+{
+    "level": "INFO",
+    "console": true,
+    "file": false,
+    "path": "logs/server.log"
+}

@@ -1,0 +1,9 @@
+build
+.vs
+.vscode
+.git
+out
+*.obj
+*.pdb
+*.ilk
+*.exe

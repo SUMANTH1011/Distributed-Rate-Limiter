@@ -1,0 +1,92 @@
+[
+    {
+        "id":1,
+        "priority":1,
+        "path":"/api/token",
+        "method":"GET",
+        "apiKey":"",
+        "userType":"",
+        "ip":"",
+        "config":{
+            "algorithm": "TOKEN_BUCKET",
+            "keyType": "USER_ID",
+            "capacity": 10,
+            "refillRate": 3,
+            "limit": 0,
+            "windowSize": 0,
+            "leakRate": 0
+        }
+    },
+    {
+    "id": 2,
+    "priority": 2,
+    "path": "/api/fixed",
+    "method": "GET",
+    "apiKey": "",
+    "userType": "",
+    "ip": "",
+    "config": {
+        "algorithm": "FIXED_WINDOW",
+        "keyType": "IP_ADDRESS",
+        "capacity": 0,
+        "refillRate": 0,
+        "limit": 5,
+        "windowSize": 10,
+        "leakRate": 0
+    }
+    },
+    {
+        "id": 3,
+        "priority": 3,
+        "path": "/api/leaky",
+        "method": "POST",
+        "apiKey": "",
+        "userType": "",
+        "ip": "",
+        "config": {
+            "algorithm": "LEAKY_BUCKET",
+            "keyType": "API_KEY",
+            "capacity":3,
+            "refillRate": 0,
+            "limit": 0,
+            "windowSize": 0,
+            "leakRate": 1
+        }
+    },
+    {
+        "id": 4,
+        "priority": 4,
+        "path": "/api/log",
+        "method": "GET",
+        "apiKey": "",
+        "userType": "",
+        "ip": "",
+        "config": {
+            "algorithm": "SLIDING_WINDOW_LOG",
+            "keyType": "USER_ID",
+            "capacity": 0,
+            "refillRate": 0,
+            "limit": 3,
+            "windowSize": 10,
+            "leakRate": 0
+        }
+    },
+    {
+        "id": 5,
+        "priority": 5,
+        "path": "/api/counter",
+        "method": "GET",
+        "apiKey": "",
+        "userType": "",
+        "ip": "",
+        "config": {
+            "algorithm": "SLIDING_WINDOW_COUNTER",
+            "keyType": "TENANT",
+            "capacity": 0,
+            "refillRate": 0,
+            "limit": 4,
+            "windowSize": 10,
+            "leakRate": 0
+        }
+    }
+]
